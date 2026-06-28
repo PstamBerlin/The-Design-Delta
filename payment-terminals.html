@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Payment Terminals — The Design Delta</title><meta name="description" content="Where payment terminals are designed in the Pearl River Delta: the rise of Android SmartPOS, why certification is the moat, and three solution houses in Shenzhen and Foshan."><link rel="canonical" href="https://thedesigndelta.com/payment-terminals.html"><meta property="og:title" content="Payment Terminals — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/payment-terminals.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">付</div><div class="wrap"><p class="eyebrow reveal">Product 08 / 14 <span class="sep">&middot;</span> 支付终端 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">Payment<br>Terminals<span class="zh">支付终端</span></h1><p class="tagline reveal d2">The hard part is the certificate, not the case.</p><div class="herometa reveal d3"><div><b>Shenzhen &middot; Foshan</b>where it clusters</div><div><b>3 houses</b>profiled below</div><div><b>Android SmartPOS</b>the platform now</div><div><b>EMV &middot; PCI &middot; MPoC</b>the moat</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>China is the workshop of the world's checkout counter. Two Shenzhen firms, <strong>PAX</strong> and <strong>NEXGO</strong>, rank among the largest payment-terminal makers on earth by units shipped, between them tens of millions of devices across more than a hundred countries.</p><p>The product has moved up the stack. It began as a countertop EFT-POS box with a PIN pad; since PAX shipped its first Android smart terminal in 2016, the category has become <strong>Android SmartPOS</strong>, a touchscreen computer with camera, scanner and an app store, spanning mPOS dongles, handhelds, desktop ECRs and facial-recognition units.</p><p>The moat is certification, not plastic. Anyone can mould an Android tablet. What these houses own is the secure platform: <strong>EMV</strong> scheme approval, <strong>PCI PTS</strong> tamper-resistant hardware, the newer <strong>PCI MPoC / SoftPOS</strong> standards, secure key injection, and the patience to carry a design through every regional acquirer's lab. That certified core, plus global certification support, is what you are really paying for.</p><p class="note">Geography: Shenzhen holds the dense core (PAX, NEXGO); Foshan is the Pearl-River sibling, strong in biometric and face-recognition POS and self-service kiosks. The other Chinese majors sit outside the Delta, Newland and Landi in Fuzhou, Sunmi in Shanghai, and are out of scope here.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">PAX <span class="lat">Technology</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Founded in Shenzhen in 2000 and listed in Hong Kong (00327), PAX is, by Nilson's count, the world's second-largest payment-terminal provider. The range covers PIN pads, countertop and portable terminals, the A-series Android SmartPOS line, and self-service kiosks, all on the open PAXSTORE app platform. An early UnionPay and Bank of China supplier, with multiple iF and Red Dot design awards.</p><ul class="facts"><li><b>2000</b>founded</li><li><b>HKEX 00327</b>listed</li><li><b>#2 worldwide (Nilson)</b>rank</li><li><b>Android SmartPOS &middot; PAXSTORE</b>platform</li></ul><div class="links"><a class="lnk" href="https://www.paxtechnology.com" target="_blank" rel="noopener">EN</a><a class="lnk" href="https://www.pax.com.cn" target="_blank" rel="noopener">中文</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">NEXGO <span class="lat">XGD</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Shenzhen Xinguodu (XGD), founded 2001 and listed on Shenzhen's GEM board (300130), built China's first wireless POS and first colour-screen POS, and an early PCI-passing wireless terminal. It cites 25 to 38 million units deployed across 80-plus countries: smart, mobile, desktop and mini POS plus PIN pads, with in-house firmware and EMC/PCI certification support, and an early PCI MPoC SoftPOS approval. NEXGO is the group's global brand.</p><ul class="facts"><li><b>2001</b>founded</li><li><b>SZSE 300130</b>listed</li><li><b>25M+ &middot; 80+ countries</b>deployed</li><li><b>XGD Group</b>parent</li></ul><div class="links"><a class="lnk" href="https://www.nexgoglobal.com" target="_blank" rel="noopener">EN</a><a class="lnk" href="https://www.xgd.com" target="_blank" rel="noopener">中文</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">Telpo <span class="lat">Telepower</span></h3><span class="house-loc"><span class="dot"></span>Foshan &middot; Nanhai</span><p class="house-body">Telepower Communication, trading as Telpo, was founded in 1999 in Nanhai district, Foshan, where it opened a new 17-storey headquarters in 2025. Across 300-plus ODM projects in 100-plus countries it builds smart and EFT-POS terminals, cash registers, biometric and face-recognition terminals, bus-ticketing machines and kiosks, with in-house EMC, drop-test and optical labs and EMV/NFC/QR across global schemes.</p><ul class="facts"><li><b>1999</b>founded</li><li><b>Nanhai, Foshan</b>base</li><li><b>300+ proj &middot; 100+ countries</b>ODM</li><li><b>Biometric/face POS, kiosks</b>specialty</li></ul><div class="links"><a class="lnk" href="https://www.telpo.com.cn" target="_blank" rel="noopener">telpo.com.cn</a><a class="lnk contact mail" href="mailto:info@telpo.com">&#9993; info@telpo.com</a></div></div></article></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>
