@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Car Head Units — The Design Delta</title><meta name="description" content="Where car head units are designed in the Pearl River Delta: how the two-DIN DVD player became a cockpit platform, the two separate industries sharing one dashboard, Apple MFi as the aftermarket gate, and four houses across Huizhou, Shenzhen and Guangzhou."><link rel="canonical" href="https://thedesigndelta.com/car-head-units.html"><meta property="og:title" content="Car Head Units — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/car-head-units.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">车</div><div class="wrap"><p class="eyebrow reveal">Product 24 <span class="sep">&middot;</span> 车机 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">Car Head<br>Units<span class="zh">车机</span></h1><p class="tagline reveal d2">The disc slot closed. Everything around it became a computer.</p><div class="herometa reveal d3"><div><b>Huizhou &middot; SZ &middot; Guangzhou</b>where it clusters</div><div><b>4 houses</b>profiled below</div><div><b>Two industries</b>one dashboard</div><div><b>Apple's MFi</b>the aftermarket gate</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>For roughly a decade the two-DIN car DVD player was one of the delta's great export categories, and then the optical drive simply stopped being worth the space. What replaced it occupies the same hole in the same dashboard and is a different machine entirely: an Android computer behind a large capacitive screen, with the disc mechanism gone and the storage on flash. The vocabulary moved with it. The industry no longer says radio or head unit internally so much as <strong>cockpit platform</strong>, because the box now frequently owns the climate controls, the 360-degree camera stitching, the voice assistant and in some vehicles the instrument cluster too. The screen got bigger, the mechanism disappeared, and the thing turned into a computer that happens to be bolted to a car.</p><p>The important thing to understand before sourcing here is that this dashboard is shared by <strong>two industries that barely touch</strong>. One is the automotive tier one business, clustered in Huizhou and Shenzhen, which sells cockpit domain controllers into vehicle programmes at Li Auto, Geely, Chery, GAC, XPeng, Xiaomi, Volkswagen and Nissan. It works on multi-year development cycles, automotive temperature and vibration qualification, functional safety process and Qualcomm-class silicon, and it is genuinely world-leading: Desay SV in Huizhou holds first place in China for smart cockpit domain controllers at around 17.9 percent share, and first for intelligent driving controllers at 21.2 percent. The other is the aftermarket, clustered in Guangzhou and Shenzhen, selling replacement Android units and adapters through Amazon and AliExpress on consumer-grade parts and a schedule measured in months. Both will call the product a head unit. Almost nothing else about them is the same, so establish early which industry you are actually talking to.</p><p>The gate on the aftermarket side is Apple. CarPlay is licensed through the <strong>MFi programme</strong>, which means an NDA, Apple's hardware design guidelines, a prototype built to specification, a formal test process, and an Apple authentication coprocessor physically present in the product. Apple restricts CarPlay to units built into vehicles or fitted as aftermarket installations, which is precisely the space the adapter business grew into: roughly <strong>120 million vehicles shipped with wired-only factory CarPlay</strong>, and a dongle converts them to wireless for something between thirty and seventy-five dollars. That segment is growing at around 14 percent a year, and the 2026 parts have moved to WiFi 6 and Bluetooth 5.3 to get connection down to a couple of seconds and to survive the thermal reality of a windscreen in summer.</p><p>One warning specific to this category. The best-known adapter brands publish no verifiable corporate address anywhere on their own sites, which for a product carrying an Apple licence and sitting permanently on a car's data bus is a poor start. Do what the <a href="ai-wearable-cameras.html">AI wearable cameras</a> page suggests and look the device up by FCC ID, where the grantee is a matter of record. Then ask the questions that separate the two industries above: which SoC, and is it an automotive temperature-rated part or a consumer one; who actually holds the MFi licence, the brand or a contract manufacturer; and has the unit been assessed against the automotive electromagnetic regime behind the E-mark rather than only consumer CE. A device wired to a vehicle's power and CAN bus is not a consumer gadget, whatever the listing says.</p><p class="note">Routine gates are CE and UKCA, FCC, RoHS and RED for the radios. On top sit the two licences that actually decide the product: Apple MFi for CarPlay, and Google's terms for Android Auto, neither of which a factory can grant you. For anything sold as vehicle equipment rather than a plugged-in accessory, automotive EMC approval is the real barrier and the one aftermarket sellers most often skip. A closing footnote for the format this category grew out of: the portable DVD player is not quite dead, and the reason is this same dashboard. Automotive use is now roughly 45 percent of what remains of that market, headrest players bought by parents who want a bounded device rather than an open tablet.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">Desay SV <span class="lat">德赛西威</span></h3><span class="house-loc"><span class="dot"></span>Huizhou</span><p class="house-body">Huizhou Desay SV Automotive, listed in Shenzhen as 002920, is the apex of this category in the delta and one of the strongest automotive electronics businesses in China. Its smart cockpit line runs from displays and head-up displays through instrument clusters and infotainment to the cockpit domain controller itself, now in its third and fourth generations and in mass production at Li Auto, Chery, Geely and GAC, alongside a smart driving arm building assisted-driving controllers, cameras, millimetre-wave radar and antennas. It ranks first in China for smart cockpit domain controllers at about 17.9 percent share and first for intelligent driving controllers at 21.2 percent, and a European display plant is scheduled to begin production in the final quarter of 2026.</p><ul class="facts"><li><b>Huizhou</b>base</li><li><b>002920.SZ</b>listed</li><li><b>17.9% cockpit DC</b>China share</li><li><b>EU plant Q4 2026</b>expanding</li></ul><div class="links"><a class="lnk" href="https://en.desaysv.com" target="_blank" rel="noopener">desaysv.com</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">Hangsheng <span class="lat">航盛电子</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">The continuity story. Shenzhen Hangsheng Electronics, trading internationally as HSAE, was founded in 1993 and its main product then was the car radio, which is to say it has lived through every format this dashboard has held and is still here. Today it is a tier one supplier of more than 4,500 people spanning infotainment and telematics, audio systems, body electronic control and electric drivetrain for hybrids and EVs, with Volkswagen and Nissan among its customers, a CNAS-accredited laboratory since 2015 and over a thousand patent applications. For European buyers it is also the most reachable house on this page: its sales arm, Hangsheng Technology GmbH, runs European distribution from Berlin with a further presence in Paris.</p><ul class="facts"><li><b>1993</b>founded</li><li><b>Shenzhen</b>base</li><li><b>4,500+</b>employees</li><li><b>Berlin &middot; Paris</b>EU offices</li></ul><div class="links"><a class="lnk" href="https://hsae.eu" target="_blank" rel="noopener">hsae.eu</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">Foryou <span class="lat">华阳集团</span></h3><span class="house-loc"><span class="dot"></span>Huizhou</span><p class="house-body">Foryou Corporation, listed as 002906 and founded in 1993 like its Huizhou neighbour, splits its business between automotive electronics and precision die casting, and is worth knowing specifically for the head-up display. Alongside infotainment, digital clusters, displays and cockpit domain controllers it builds HUDs, wireless charging, digital access and around-view and parking assistance. Automotive electronics revenue reached 3.071 billion yuan in a single half year, up 65.4 percent, on new programmes from Changan, Chery, Geely, Great Wall, BAIC, Seres, XPeng, Xiaomi and Li Auto, and its products reach more than 80 countries. If the specification includes a projected display rather than only a panel, this is the Huizhou house to call.</p><ul class="facts"><li><b>1993</b>founded</li><li><b>Huizhou</b>base</li><li><b>002906.SZ</b>listed</li><li><b>HUD &middot; cockpit</b>focus</li></ul><div class="links"><a class="lnk" href="https://en.foryougroup.com" target="_blank" rel="noopener">foryougroup.com</a></div></div></article><article class="house"><div class="house-no">04</div><div><h3 class="house-name">Dasaita <span class="lat">巨圆电子</span></h3><span class="house-loc"><span class="dot"></span>Guangzhou &middot; Baiyun</span><p class="house-body">The aftermarket, and the direct descendant of the car DVD trade this category grew out of. Dasaita operates from Zhisheng Plaza in Baiyun district, Guangzhou, selling Android car stereos directly to end users and installers in the West: single and double DIN units, vehicle-specific fascias, wireless CarPlay and Android Auto, DSP audio tuning and the large vertical screens that imitate a factory fit. It is included as the honest representative of a tier that is genuinely large and genuinely useful, and also genuinely consumer-grade. Read it as the benchmark for what the aftermarket costs and delivers, and hold it to the automotive EMC and MFi questions above rather than to a tier one's standards.</p><ul class="facts"><li><b>Baiyun, Guangzhou</b>base</li><li><b>Android stereos</b>range</li><li><b>Direct to installer</b>channel</li><li><b>Aftermarket</b>tier</li></ul><div class="links"><a class="lnk" href="https://www.dasaita.com" target="_blank" rel="noopener">dasaita.com</a></div></div></article></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>
