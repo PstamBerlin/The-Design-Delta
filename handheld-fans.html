@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Handheld Fans — The Design Delta</title><meta name="description" content="Where handheld and neck fans are designed in the Pearl River Delta: the BLDC motor control chip as the reference design, why field-oriented control decides noise and runtime, and the EU battery removability rule of 18 February 2027 that makes the current glued-shell architecture obsolete."><link rel="canonical" href="https://thedesigndelta.com/handheld-fans.html"><meta property="og:title" content="Handheld Fans — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/handheld-fans.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">风</div><div class="wrap"><p class="eyebrow reveal">Product 22 <span class="sep">&middot;</span> 手持风扇 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">Handheld<br>Fans<span class="zh">手持风扇</span></h1><p class="tagline reveal d2">The simplest product here, and the one 2027 breaks.</p><div class="herometa reveal d3"><div><b>Shenzhen &middot; Dongguan</b>where it clusters</div><div><b>4 houses</b>profiled below</div><div><b>The BLDC control IC</b>the platform</div><div><b>Battery removability</b>the 2027 gate</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>There is almost nothing in a handheld fan: a brushless motor, a lithium cell, an impeller, a moulding, a switch. What separates a good one from a bad one is narrower than it looks, and it is not the blade. It is <strong>noise and runtime at a given airflow</strong>, and both are decided by how the motor is driven. Crude six-step commutation is cheap and whines; sinusoidal field-oriented control is quieter and pulls less current for the same wind, which on a cell this small is the difference between four hours and ten. So the reference design in this category is the motor control chip, and the honest way to compare two fans that look identical is to ask which driver is inside and whether it runs FOC.</p><p>The delta owns this outright, and the reason is adjacency rather than cleverness. Guangdong holds the large majority of the world's specialised suppliers here, spread across Shenzhen, Guangzhou and Dongguan, with cells, micro motors, injection moulding and PCBA all inside a short drive of each other, which is what lets a house turn a trend into shipped product in weeks rather than seasons. And this is a trend category in the purest sense: handheld gave way to clip-on, then to the hanging neck fan, then to bladeless neck designs once people noticed what an exposed impeller does to long hair, and now to thermoelectric neck coolers that actually drop skin temperature rather than moving air past it. JISULIFE went from founding in 2016 to more than 60 million units shipped.</p><p>Now the part that makes this page worth writing, because it is not really about fans. From <strong>18 February 2027</strong>, Article 11 of the EU Battery Regulation requires that a portable battery incorporated in a product placed on the EU market be <strong>readily removable and replaceable by the end user</strong>, at any time during the product's lifetime. A portable battery here means any sealed cell of 5kg or less that is not an industrial, vehicle, LMT or starter battery, which is to say essentially every rechargeable object in this guide. The end user is defined as an adult with no particular experience or qualification. Instructions for removal and replacement must be permanently available on a public website.</p><p>Set that against how a handheld fan is actually built today: an ultrasonically welded or glued shell around a cell soldered to the board. That is not a documentation problem, it is a redesign. Screws instead of welds, a connector instead of solder tabs, a service door somebody can open without destroying the housing, and spare cells that remain purchasable. If you are tooling now for product that will still be selling into Europe in 2027, assume the current architecture is finished and price the change into the mould, not into the certification budget. The same arithmetic lands on earbuds, power banks and wearables, and hardest of all on a sealed titanium <a href="smart-rings.html">smart ring</a>, where user-replaceable is close to a contradiction in terms.</p><p class="note">The routine gates are light: CE and UKCA, FCC, RoHS and EMC, plus UN38.3 for the lithium cell, which matters more here than in most categories because seasonal demand means these ship by air into a summer that has already started. Beyond that, two things worth putting in the specification rather than the marketing. First, the motor driver part number and whether it does field-oriented control, because that single line decides noise and runtime. Second, mechanical safety on anything worn at the neck: hair entrapment is the failure mode that produces recalls and video, and it is the reason the premium end of this category went bladeless. The battery removability rule above sits over all of it, and unlike the others it changes the tooling.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">JISULIFE <span class="lat">几素</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Shenzhen Jisu Technology was established in June 2016 and built the category as a branded product rather than a summer commodity. By 2022 it was the world's largest portable fan brand measured by global sales revenue, with portable fans making up more than half of its own turnover, and cumulative shipments have passed 60 million units across more than 40 countries and 20,000 offline stores. It takes design seriously in a way this price bracket rarely does: the Handheld Fan Pro1s and the Ultra1 both took Red Dot awards in 2024, alongside iF recognition and a national patent award for its high-speed energy-saving fan technology. The benchmark for what the top of this market looks like.</p><ul class="facts"><li><b>June 2016</b>established</li><li><b>Shenzhen</b>base</li><li><b>60M+ units</b>shipped</li><li><b>Red Dot &middot; iF</b>awards</li></ul><div class="links"><a class="lnk" href="https://jisulife.com" target="_blank" rel="noopener">jisulife.com</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">Fortior Technology <span class="lat">峰岹科技</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">The platform, and the part of this bill of materials worth arguing about. Fortior was founded in Shenzhen in 2010 and is listed on the Shanghai STAR market as 688279, designing motor drive and control silicon across the whole chain: motor control MCUs and ASICs in single-phase and three-phase families, high-voltage driver ICs, motor-specific power MOSFETs and integrated power modules. Parts such as the FU6832S are the brushless drivers sitting inside small fans, appliances, power tools and increasingly robotics. It held around 4.8 percent of the Chinese market in 2023, sixth including overseas suppliers. When a supplier cannot tell you which driver is in its fan, this is the question they are failing.</p><ul class="facts"><li><b>2010</b>founded</li><li><b>Shenzhen</b>base</li><li><b>688279.SS</b>listed</li><li><b>BLDC drive &middot; MCU &middot; MOSFET</b>range</li></ul><div class="links"><a class="lnk" href="https://www.fortiortech.com" target="_blank" rel="noopener">fortiortech.com</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">TT Motor <span class="lat">Micro drives</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">The motor itself, which in a product this small is a component you specify rather than a commodity you order. TT Motor works out of Shenzhen on micro drives from roughly 10 to 60mm in diameter, spanning DC gear motors, brushless motors, brushless gear motors and coreless types, from a plant of about 4,500 square metres with more than 150 staff, exporting to over 80 countries on annual output above 30 million dollars. It quotes customisation across shaft type, speed, torque, control mode and encoder, which is the practical reason to talk to a motor house directly rather than accept whatever the assembler has in a drawer: the motor and the driver have to be chosen together or the FOC tuning is guesswork.</p><ul class="facts"><li><b>Shenzhen</b>base</li><li><b>&Phi;10&ndash;60mm</b>micro motors</li><li><b>4,500 m&sup2; &middot; 150+</b>scale</li><li><b>80+ countries</b>export</li></ul><div class="links"><a class="lnk" href="https://www.ttmotor.com" target="_blank" rel="noopener">ttmotor.com</a></div></div></article><article class="house"><div class="house-no">04</div><div><h3 class="house-name">TORRAS <span class="lat">图拉斯</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Where the category escalated, and evidence of how quickly this cluster follows a form factor. TORRAS is a 3C accessories brand under Shenzhen Lanhe Technology, founded 2012, certified a National High-tech Enterprise in 2019, selling into more than 148 countries with a cumulative user base above 60 million, and best known in the West for phone cases. Since 2020 it has pushed the COOLiFY line of neck air conditioners, which is a genuinely different machine: a Peltier thermoelectric module against the skin with the fan reduced to a heat-exchange duty, bladeless, running fan, cooling or heating modes off a 5,000 to 6,000mAh cell. A useful reminder that in this category the product you benchmark today is not the one you will be selling against.</p><ul class="facts"><li><b>2012</b>founded</li><li><b>Shenzhen</b>base</li><li><b>COOLiFY</b>neck coolers</li><li><b>148+ countries</b>reach</li></ul><div class="links"><a class="lnk" href="https://www.torraslife.com" target="_blank" rel="noopener">torraslife.com</a></div></div></article></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>
