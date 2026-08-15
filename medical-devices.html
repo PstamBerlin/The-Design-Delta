@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Medical Devices — The Design Delta</title><meta name="description" content="Where medical devices are designed in the Pearl River Delta: the quality management system rather than a chipset as the platform, why this is not a badge-and-ship category, Mindray in the global top three, and the conditional MDR transition running to 2027 and 2028."><link rel="canonical" href="https://thedesigndelta.com/medical-devices.html"><meta property="og:title" content="Medical Devices — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/medical-devices.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">医</div><div class="wrap"><p class="eyebrow reveal">Product 32 <span class="sep">&middot;</span> 医疗器械 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">Medical<br>Devices<span class="zh">医疗器械</span></h1><p class="tagline reveal d2">Where the file matters more than the factory.</p><div class="herometa reveal d3"><div><b>Shenzhen</b>where it clusters</div><div><b>4 houses</b>profiled below</div><div><b>The quality system</b>the platform</div><div><b>MDR and the FDA</b>the gate</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>Every other page in this guide turns on a physical platform: a chipset, a compressor, a coil, a waveguide. This one does not. In medical devices the platform is the <strong>quality management system</strong>, and the artefact that carries the value is a file. ISO 13485 governing the processes, a design history file recording every decision, risk management under ISO 14971, a clinical evaluation, and post-market surveillance running for the life of the product. Two physically identical patient monitors, one with a complete technical file and a notified body certificate and one without, are not the same product in any commercial sense. One can be sold in Europe and the other is scrap. That single fact reorders everything this guide usually says.</p><p>It also means <strong>this is not a badge-and-ship category, and you should be suspicious of anyone who implies otherwise</strong>. You cannot put your logo on somebody else's class II device and sell it as your own without taking on the regulatory position that goes with it, becoming the legal manufacturer with everything that entails. Arrangements exist, own-brand labelling among them, but they are legal structures with obligations rather than a purchase order. If you arrived at this page expecting the pattern from earbuds or tablets, the honest advice is to budget for a regulatory consultant before you budget for tooling.</p><p>What the delta has built inside those constraints is genuinely world class, and it is concentrated in Shenzhen. <strong>Mindray</strong>, founded 1991, employs around 21,000 people, sells into more than 190 countries and sits in the global top three in patient monitoring and life support alongside Medtronic, GE, Philips and Nihon Kohden. Around it sits a real bench: SonoScape in ultrasound and endoscopy, Edan in monitoring and diagnostics, Snibe in immunoassay. Worth reporting the current shape honestly rather than the brochure version: Mindray's 2025 revenue fell 9.38 percent to 33.282 billion yuan with net profit down 30.28 percent, under pressure from domestic Chinese procurement, while <strong>international revenue rose 7.4 percent and passed half the total at 53 percent</strong>. The delta's medical industry is becoming an export industry in real time.</p><p>Which makes the European gate the central commercial fact. Regulation (EU) 2017/745, the MDR, replaced the old directives and raised the requirements on clinical evidence, notified body scrutiny and post-market work far enough that the notified body system could not absorb the workload. Regulation (EU) 2023/607 therefore extended the transition for legacy devices: <strong>31 December 2027 for class III and implantable class IIb devices, and 31 December 2028 for other class IIb, class IIa and class Is and Im devices</strong>. It also deleted the old sell-off deadline of 27 May 2025, so devices lawfully placed on the market before the transition ends can continue to be made available. The IVDR does the equivalent job for in vitro diagnostics on its own staggered timetable.</p><p class="note">The trap is that the extension is conditional, not automatic. It requires the manufacturer to have lodged an application with a notified body and had it accepted, and to make <strong>no significant change to design or intended purpose</strong>, which produces the perverse result that improving a product can forfeit its own transition. So the diligence here is unlike anywhere else in this guide. Ask which notified body holds the file and under what certificate number. Ask the classification in each target market, because it varies. Ask whether a change you want counts as significant, before requesting it. And never accept a factory's ISO 13485 certificate as evidence that a device is certified: the first covers a quality system, the second covers a product, and conflating them is the most common and most expensive error in this category. For the United States the logic differs again, since 510(k) clearance turns on demonstrating equivalence to a predicate device, so a product can be straightforward in Europe and unclearable in America, or the reverse. Add UDI, EUDAMED registration, an EU authorised representative, importer and distributor obligations and a named person responsible for regulatory compliance, and the paperwork genuinely does outlive the hardware.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">Mindray <span class="lat">迈瑞医疗</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Founded 1991 and listed in Shenzhen as 300760, Mindray is the delta's unambiguous world-tier medical manufacturer and one of the few Chinese companies in any category on this site that competes at the top of a regulated Western market on equal terms. Around 21,000 employees, sales in over 190 countries, and three business lines: patient monitoring and life support, where it ranks in the global top three, medical imaging including ultrasound, and in vitro diagnostics. The catalogue runs from monitors, ventilators, anaesthesia machines and AEDs through to haematology analysers and total laboratory automation. Revenue of 33.282 billion yuan in 2025 was down on the year on domestic procurement pressure, but international sales rose to <strong>53 percent of the total</strong>, which is the number that matters here.</p><ul class="facts"><li><b>1991</b>founded</li><li><b>300760.SZ</b>listed</li><li><b>~21,000</b>employees</li><li><b>Top 3 worldwide</b>patient monitoring</li></ul><div class="links"><a class="lnk" href="https://www.mindray.com" target="_blank" rel="noopener">mindray.com</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">SonoScape <span class="lat">开立医疗</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Established 2002 and listed as 300633, SonoScape is the imaging and endoscopy specialist, serving more than 170 countries from Shenzhen with research centres abroad. Its founding achievement is a useful marker of when this industry became internationally credible: in 2004 it released what it describes as the world's first 15 inch LCD portable colour Doppler ultrasound system, and took it through both FDA clearance and CE marking. The range now spans ultrasound, high-resolution endoscopy, minimally invasive surgical and cardiovascular intervention products, electrophysiology, in vitro diagnostics and a veterinary line. The house to approach when the requirement is imaging rather than monitoring, which is a materially different regulatory and clinical evidence problem.</p><ul class="facts"><li><b>2002</b>established</li><li><b>300633.SZ</b>listed</li><li><b>Ultrasound &middot; endoscopy</b>focus</li><li><b>170+ countries</b>reach</li></ul><div class="links"><a class="lnk" href="https://www.sonoscape.com" target="_blank" rel="noopener">sonoscape.com</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">Edan <span class="lat">理邦仪器</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Founded 1995 and listed as 300206, Edan occupies the broad middle of the category and is the most likely of these houses to be relevant to a smaller programme. Its range covers electrocardiography from resting ECG through stress testing, Holter and workstations, patient monitoring in modular, compact, vital signs and telemetry forms, obstetrics and gynaecology equipment, cart-based and portable ultrasound, and in vitro diagnostics including haematology analysers and their reagents, plus a veterinary line. It has been exporting since 2002 and operates to ISO 9001 and ISO 13485 across design, manufacture and service. A practical partner for well-understood device classes where the clinical evidence path is established rather than exploratory.</p><ul class="facts"><li><b>1995</b>founded</li><li><b>300206.SZ</b>listed</li><li><b>ECG &middot; monitoring &middot; IVD</b>range</li><li><b>ISO 13485</b>certified</li></ul><div class="links"><a class="lnk" href="https://www.edan.com" target="_blank" rel="noopener">edan.com</a></div></div></article><article class="house"><div class="house-no">04</div><div><h3 class="house-name">Snibe <span class="lat">新产业生物</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Shenzhen New Industries Biomedical Engineering, trading as Snibe, was founded in 1995 and listed in Shenzhen in 2020, and it sits on the diagnostics side of the industry rather than the device side, which puts it under the IVDR rather than the MDR in Europe. Its core is chemiluminescence immunoassay, the analysers and the reagent menus that run on them, alongside biochemistry and electrolyte analysers, molecular diagnostics, haemostasis and point of care testing. It obtained FDA clearance in 2017 and carries CE marking, and it sells across North America, Europe, Latin America and Asia Pacific. Included because diagnostics is where the recurring revenue in this industry actually lives: the analyser is the razor and the reagents are the blades.</p><ul class="facts"><li><b>1995</b>founded</li><li><b>SZSE 2020</b>listed</li><li><b>Chemiluminescence</b>core</li><li><b>IVDR not MDR</b>regime</li></ul><div class="links"><a class="lnk" href="https://www.snibe.com" target="_blank" rel="noopener">snibe.com</a></div></div></article></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>
