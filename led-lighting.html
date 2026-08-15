@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>LED Lighting — The Design Delta</title><meta name="description" content="Where LED lighting is designed in the Pearl River Delta: Guzhen in Zhongshan making roughly half the world's lighting, packaging at 70 billion LEDs a month, the driver as the part that decides quality, and the EU flicker limits that tightened in September 2024."><link rel="canonical" href="https://thedesigndelta.com/led-lighting.html"><meta property="og:title" content="LED Lighting — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/led-lighting.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">光</div><div class="wrap"><p class="eyebrow reveal">Product 31 <span class="sep">&middot;</span> LED 照明 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">LED<br>Lighting<span class="zh">LED 照明</span></h1><p class="tagline reveal d2">Half the world's lighting, from one town.</p><div class="herometa reveal d3"><div><b>Zhongshan &middot; Foshan &middot; Huizhou</b>where it clusters</div><div><b>4 houses</b>profiled below</div><div><b>The package and the driver</b>the platform</div><div><b>Flicker limits</b>the gate</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>The single most extreme geographic fact in this guide belongs to a town most readers have never heard of. <strong>Guzhen, in Zhongshan</strong>, produces around 70 percent of China's lighting and roughly half of the world's, across more than 45,000 lighting and related enterprises, exporting to over 180 countries. It is worth being precise about what that means, because it is not four giants the way white goods is. Guzhen is thousands of small and medium firms wrapped around an enormous wholesale market, where a buyer can walk a few kilometres of showrooms and specify a fixture from components sourced within the same postcode. The clustering is the product. Around it sit the industrial layers: LED packaging in Zhongshan and Foshan, and brand and channel businesses in Huizhou.</p><p>An LED lamp is four things: a semiconductor die, the package that holds and phosphor-converts it, a driver that turns mains alternating current into the constant current the die needs, and an optic. The dies themselves largely come from outside the delta. What the delta owns is <strong>packaging at a scale that is difficult to picture</strong>, with MLS in Zhongshan producing up to 70 billion packaged LEDs in a month, and Nationstar in Foshan working in the field since 1969. But the part that decides whether a lamp is any good is not the die or the package. It is the driver, and it is the cheapest thing to compromise.</p><p>Which brings the gate, and it is the most elegant one in this guide because it is invisible in a showroom and unmissable in a laboratory. Commission Regulation (EU) 2019/2020 has since <strong>1 September 2021</strong> imposed numerical limits on temporal light artefacts: <strong>PstLM ≤ 1.0</strong>, covering visible flicker between 0.3 and 80Hz, and a stroboscopic visibility measure limit covering the effect on moving objects between 80 and 2000Hz. That second limit started at SVM ≤ 0.9 and <strong>tightened to SVM ≤ 0.4 on 1 September 2024</strong>. Both are functions of driver ripple. A cheap constant-current driver with poor smoothing produces light that pulses at twice mains frequency, which most people cannot consciously see and which nonetheless causes headaches, makes rotating machinery appear stationary, and now fails a European product test.</p><p>The commercial consequence is specific: a lamp designed to the 2021 limit may be non-compliant against the 2024 one, so old stock and old reference designs are a live risk rather than a bargain. Ask for measured PstLM and SVM at full load for the exact lamp and driver pairing you are buying, not for the driver in isolation and not for a similar model. Then ask the other questions this category rewards: the energy label class in the destination market, whether lifetime and lumen maintenance figures such as L70 are tested or extrapolated, and the colour rendering index including R9 rather than a bare CRI number. For connected lighting, the RED cybersecurity requirements and the Cyber Resilience Act duties described on the <a href="wifi-routers.html">WiFi routers</a> page apply here too, because a smart bulb is radio equipment with a network stack.</p><p class="note">One piece of history explains the whole category. In 2017 OSRAM sold LEDVANCE, its consumer and general lighting business and with it the right to the Osram brand in lamps, to a consortium of IDG Capital, the Zhongshan packaging manufacturer MLS and the Yiwu state asset operator. The transaction closed on 3 March 2017. The incumbent European lamp brand that many buyers still specify by name has been owned from Zhongshan for nearly a decade. Everything else on this page follows from that: the delta did not win this industry by underselling it from below, it bought the front end after taking the back end, and the flicker regulation above is one of the few remaining places where a European standard rather than a European manufacturer sets the terms.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">MLS <span class="lat">木林森</span></h3><span class="house-loc"><span class="dot"></span>Zhongshan &middot; Xiaolan</span><p class="house-body">Established in 1997 on Mulinsen Avenue in Xiaolan town and listed in Shenzhen as 002745 since 2015, MLS is the packaging giant of this cluster and one of the ten largest companies in the global LED industry by sales, producing <strong>up to 70 billion packaged LEDs a month</strong> across five production bases in Zhongshan, Foshan, Ji'an, Xinyu and Yiwu with over three million square metres of factory. It was the strategic industrial partner in the consortium that acquired LEDVANCE from OSRAM in 2017, which is why the practical route to this house for a Western buyer is through LEDVANCE rather than the Chinese-language corporate site, which is frequently unreachable from outside China. Link given accordingly.</p><ul class="facts"><li><b>1997</b>established</li><li><b>Xiaolan, Zhongshan</b>base</li><li><b>002745.SZ</b>listed</li><li><b>70bn/month</b>packaged LEDs</li></ul><div class="links"><a class="lnk" href="https://www.ledvance.com" target="_blank" rel="noopener">ledvance.com</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">Nationstar <span class="lat">国星光电</span></h3><span class="house-loc"><span class="dot"></span>Foshan</span><p class="house-body">Foshan NationStar Optoelectronics traces back to 1969, which makes it the oldest company profiled anywhere in this guide, and it was the first domestic enterprise to list with LED as its principal business, trading as 002449 under the control of the Guangdong state-owned Guangsheng Holding Group. It holds a leading position in global LED packaging and splits its work between display components and lighting devices, with a product emphasis on high brightness and contrast alongside low blue light, full spectrum and adaptive natural-light dimming for education, home and commercial use. The state-backed, long-horizon end of this cluster, and the counterweight to Guzhen's thousands of small firms.</p><ul class="facts"><li><b>1969</b>founded</li><li><b>Foshan</b>base</li><li><b>002449.SZ</b>listed</li><li><b>Packaging + display</b>range</li></ul><div class="links"><a class="lnk" href="https://www.nationstar.com" target="_blank" rel="noopener">nationstar.com</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">NVC Lighting <span class="lat">雷士照明</span></h3><span class="house-loc"><span class="dot"></span>Huizhou &middot; Ruhu</span><p class="house-body">Founded 1998 and working from the NVC Industrial Park at Ruhu in Huizhou, with a Hong Kong listing since 2010, NVC is the brand and channel end of the delta's lighting industry rather than a component maker. It runs the full chain from research and design through production, marketing and service, selling home, commercial and architectural lighting as specified solutions rather than as boxes, which is a materially different business from the Guzhen model of building to a drawing and a price. Useful as the domestic benchmark for what a fully branded Chinese lighting company looks like, and as a reminder that Huizhou quietly hosts several of the delta's brand-led electronics businesses.</p><ul class="facts"><li><b>1998</b>founded</li><li><b>Ruhu, Huizhou</b>base</li><li><b>HKEX 2010</b>listed</li><li><b>Brand + channel</b>model</li></ul><div class="links"><a class="lnk" href="https://nvc-lighting.com.cn" target="_blank" rel="noopener">nvc-lighting.com.cn</a></div></div></article><article class="house"><div class="house-no">04</div><div><h3 class="house-name">Govee <span class="lat">Intellirocks</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">The newest model, and the one that bypasses this entire industrial structure. Shenzhen Intellirocks Tech was founded in January 2017 by Wu Wenlong, previously an early core team member and chief technology officer at Anker Innovations, and under the Govee name it sells smart light strips, panels, lamps and outdoor lighting directly to Western consumers through Amazon and its own storefront. It competes on app, effects, integrations and rapid product cadence rather than on lumens per watt or wholesale price, which makes it a software company that ships light. Worth studying precisely because it shows the consumer lighting margin migrating away from the fixture and into the experience around it.</p><ul class="facts"><li><b>Jan 2017</b>founded</li><li><b>Shenzhen</b>base</li><li><b>Ex-Anker CTO</b>founder</li><li><b>Direct to consumer</b>channel</li></ul><div class="links"><a class="lnk" href="https://www.govee.com" target="_blank" rel="noopener">govee.com</a></div></div></article></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>
