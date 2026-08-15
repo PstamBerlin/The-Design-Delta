@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Handheld Consoles — The Design Delta</title><meta name="description" content="Where handheld game consoles are designed in the Pearl River Delta: the emulation handheld as a product class nobody outside Shenzhen builds, tariffs and the end of de minimis as the gate that stopped shipments, and what the Yuzu settlement actually established."><link rel="canonical" href="https://thedesigndelta.com/handheld-consoles.html"><meta property="og:title" content="Handheld Consoles — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/handheld-consoles.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">玩</div><div class="wrap"><p class="eyebrow reveal">Product 29 <span class="sep">&middot;</span> 掌上游戏机 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">Handheld<br>Consoles<span class="zh">掌上游戏机</span></h1><p class="tagline reveal d2">Legal hardware, and a library nobody wants to discuss.</p><div class="herometa reveal d3"><div><b>Shenzhen</b>where it clusters</div><div><b>4 houses</b>profiled below</div><div><b>Somebody else's SoC</b>the platform</div><div><b>Tariffs and copyright</b>the two gates</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>This category splits cleanly in two on the silicon. At the lower end sit <strong>Android and Linux retro handhelds</strong> built around Rockchip, Allwinner or Unisoc application processors, the same class of part that powers the cheap tablets on the <a href="android-tablets.html">Android tablets</a> page, in a shell with physical controls and a screen between two and five inches. At the upper end sit <strong>x86 Windows handhelds</strong> running AMD APUs, which are effectively small gaming laptops without keyboards and cost ten times as much. Neither processor is designed in the delta. What Shenzhen owns is everything else, and in this category that turns out to be most of the product: the industrial design, the controls, the thermal solution that decides whether a chip can hold its clocks, the battery, and above all the software image, because a retro handheld is judged almost entirely on how well its emulators and frontend are tuned.</p><p>It is also a category where the delta is the apex rather than the supplier, in a specific and slightly odd way. Nobody else makes these. Nintendo, Sony and Valve build handhelds, but nobody outside Shenzhen builds the emulation handheld as a product class, and the houses below have been iterating on it for years while the rest of the industry ignored it. The competition between them is fast, public and unusually specification-driven, which is good for buyers: the Retroid Pocket Nova arrived in 2026 at 229 dollars with an AMOLED panel and Snapdragon 8 Gen 2 class performance, and AYANEO's Pocket MICRO 2 sold out ten minutes after launch.</p><p>The first gate is the one that actually stopped shipments. In April 2025 Anbernic <strong>suspended all orders shipping from China to the United States</strong>, telling customers to buy from its American warehouse stock instead, after tariffs on Chinese goods reached levels reported at 145 percent and the long-standing de minimis exemption for consignments under 800 dollars was withdrawn. That exemption was the commercial foundation of this entire category, because these are 60 to 250 dollar products bought one at a time and posted directly to consumers. Other retro hardware makers paused American sales in the same period. For anyone sourcing here, treat landed cost and route to market as the first question rather than the last one, and note that holding US warehouse stock has become a structural requirement rather than a convenience.</p><p>The second gate is copyright, and it needs stating precisely because a lot of nonsense is written about it. <strong>The hardware is not the problem.</strong> A handheld that runs Android and plays your own files is an ordinary consumer electronic device. The exposure lives in software: in emulators, and much more sharply in game images shipped with the machine. What the industry learned in 2024 is what defending that costs. Nintendo sued the developers of the Switch emulator Yuzu, and within days they settled for <strong>2.4 million dollars</strong>, agreed to destroy all copies and ceased development, taking the 3DS emulator Citra down with them since it shared management. Because it settled before trial it set no precedent, so the underlying legal question about emulation remains formally open while the practical answer, that almost nobody can afford to test it, is entirely settled. A device sold empty and a device sold with a memory card full of games are different legal objects. Ask which one you are ordering, and get it in writing.</p><p class="note">Routine gates are light: CE, UKCA, FCC, RoHS and RED for the radios, UN38.3 for the cell, and the usual age and content labelling if you publish anything yourself. Two commercial risks matter more. Memory pricing has moved violently through 2026, and AYANEO halted its Next 2 programme over it, so a bill of materials quoted on last quarter's RAM and flash is not a quote. And software support is the real warranty in this category: these devices are defined by their firmware images and community ports, so ask what happens to updates when a model is superseded, which in practice is often within a year.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">Anbernic <span class="lat">安伯尼克</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Founded 2017 in Shenzhen and the house that defined the modern retro handheld, Anbernic runs the broadest catalogue in the category across price, power and form factor, from tiny vertical keychain machines to clamshells such as the RG SP announced in July 2026. Its strategy is volume and iteration rather than a flagship: several new models a year, aggressive pricing, and a large enough installed base that community firmware projects target its hardware first, which is a genuine moat in a product judged on software. It is also the house that demonstrated the tariff exposure most publicly, suspending China to United States shipping in April 2025 and pushing customers to local warehouse stock.</p><ul class="facts"><li><b>2017</b>founded</li><li><b>Shenzhen</b>base</li><li><b>RG series</b>range</li><li><b>Broadest catalogue</b>strategy</li></ul><div class="links"><a class="lnk" href="https://anbernic.com" target="_blank" rel="noopener">anbernic.com</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">AYANEO <span class="lat">Shenzhen</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">AYANEO works both halves of the category at once, which is unusual. It builds x86 Windows handhelds on AMD silicon aimed at running current PC titles, and simultaneously a design-led Android line, the Pocket series, where the KONKR Pocket Advance is an openly acknowledged homage to the Game Boy Advance with a far higher emulation ceiling. Demand runs ahead of supply often enough to be a pattern rather than a stunt: the Pocket MICRO 2 sold out within ten minutes. It is also the house most exposed to the 2026 memory market, having halted its Next 2 programme over RAM costs, which is worth knowing before you plan a schedule around it.</p><ul class="facts"><li><b>Shenzhen</b>base</li><li><b>x86 + Android</b>both tiers</li><li><b>Pocket &middot; KONKR</b>lines</li><li><b>Design-led</b>positioning</li></ul><div class="links"><a class="lnk" href="https://www.ayaneo.com" target="_blank" rel="noopener">ayaneo.com</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">GPD <span class="lat">GamePad Digital</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">GPD Technology has been building this class of machine since 2013, which makes it the veteran and means it was making pocket x86 computers years before the Steam Deck made the idea respectable. Its distinguishing move is the keyboard: the Win and Pocket lines are laptop-shaped handhelds with full keyboards built in, aimed as much at engineers who want a real machine in a jacket pocket as at gamers, and it launches flagship hardware such as the WIN 5 through crowdfunding rather than retail. The house to approach when the requirement is a genuinely small x86 computer rather than a console, because that framing changes the specification, the thermals and the price.</p><ul class="facts"><li><b>2013</b>building since</li><li><b>Shenzhen</b>base</li><li><b>Win &middot; Pocket</b>lines</li><li><b>x86 + keyboard</b>niche</li></ul><div class="links"><a class="lnk" href="https://www.gpd.hk" target="_blank" rel="noopener">gpd.hk</a></div></div></article><article class="house"><div class="house-no">04</div><div><h3 class="house-name">Retroid <span class="lat">Pocket</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Retroid occupies the position the whole category is judged against, the mid-range Android handheld where price and performance meet, and it has built a following by shipping specification rather than marketing. The Pocket Nova arrived in 2026 at 229 dollars with a 4.5 inch AMOLED panel in a 4:3 ratio, chosen deliberately because most of the library it is bought to run was made for that shape, on Snapdragon 8 Gen 2 class silicon. That combination, a good screen in the correct aspect ratio with enough compute to reach the harder emulation targets, is what buyers in this category actually optimise for, and it is the reference point against which Anbernic's breadth and AYANEO's design work get measured.</p><ul class="facts"><li><b>Shenzhen</b>base</li><li><b>Pocket Nova</b>current</li><li><b>4:3 AMOLED</b>known for</li><li><b>Mid-range Android</b>tier</li></ul><div class="links"><a class="lnk" href="https://www.goretroid.com" target="_blank" rel="noopener">goretroid.com</a></div></div></article></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>
