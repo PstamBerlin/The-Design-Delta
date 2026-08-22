@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Robot Vacuums — The Design Delta</title><meta name="description" content="Where robot vacuums are designed in the Pearl River Delta: LiDAR and camera SLAM navigation, brushless suction motors, self-cleaning dock systems, and five ODM houses across Shenzhen and Dongguan."><link rel="canonical" href="https://thedesigndelta.com/robot-vacuums.html"><meta property="og:title" content="Robot Vacuums — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/robot-vacuums.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+.cta-block{margin-top:4px;max-width:680px}
+.cta-block>p{font-size:17.5px;color:var(--ink);margin:0 0 22px;max-width:640px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.cta-btn{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:10px 22px;display:inline-block;transition:background .14s,border-color .14s}
+.cta-btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.cta-book{border-top:1px solid var(--line);padding-top:20px}
+.cta-book p{font-size:15.5px;color:var(--ink-soft);margin:0 0 14px;max-width:640px}
+.cta-book-links{display:flex;gap:8px;flex-wrap:wrap}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">扫</div><div class="wrap"><p class="eyebrow reveal">Product 34 <span class="sep">&middot;</span> 扫地机器人 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">Robot<br>Vacuums<span class="zh">扫地机器人</span></h1><p class="tagline reveal d2">A spinning LiDAR, a brushless motor, a mop pad, and a dock that empties itself.</p><div class="herometa reveal d3"><div><b>Shenzhen &middot; Dongguan</b>where it clusters</div><div><b>5 houses</b>profiled below</div><div><b>LiDAR SLAM</b>the standard</div><div><b>Navigate &middot; vacuum &middot; mop</b>the systems</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>A robot vacuum is a mobile robot that must build a map and navigate it without human input, and the industry has settled on two competing ways to do that. <strong>LiDAR</strong> (light detection and ranging) mounts a spinning turret on top of the machine that fires a laser and times its reflection, building a precise 2D floor plan and locating the robot within it: it works in absolute darkness, but the turret adds height, a problem under low furniture, and cost. <strong>vSLAM</strong> (visual simultaneous localization and mapping) uses one or more cameras to recognise landmarks and triangulate position instead; it is cheaper, sits flush, and doubles as an object-recognition system, but it needs ambient light to work. Most premium 2026 models no longer choose one or the other: they run LiDAR for mapping, a camera for recognition, and a structured-light or ToF sensor array for close-in obstacle avoidance.</p><p>Everything current runs on <strong>brushless DC motors</strong> spinning an impeller at high RPM to pull air through the dust path; suction is marketed in <strong>Pascals</strong> (pa), with 2026 flagships claiming figures of 10,000 to 20,000pa that are more a marketing number than a like-for-like spec. The cleaning module itself pairs a <strong>main brush</strong>, a rubber roller or a bristle-and-rubber hybrid, with spinning <strong>edge brushes</strong> that sweep dust out from corners and skirting. The live frontier is the mop: vibrating pads that scrub light stains, dual counter-rotating pads for real scrubbing, and dock stations that wash the pads in clean water, wring the dirty water out, and hot-air dry them so the machine never parks on a damp mop.</p><p>As with everything in this series, the reference design sits one level down, at the chipset. <strong>Allwinner</strong>, out of Zhuhai, supplies the SoCs purpose-built for SLAM work: the established MR133 and the newer <strong>MR536MX</strong>, which folds in an NPU for AI-based obstacle recognition, distinguishing a shoe from a phone charger from a pile of pet mess. <strong>Rockchip's RK3562</strong> is the chip behind flagships like the Ecovacs X5. This is the classic PRD ODM pattern: the brand writes a PRD specifying navigation type, suction power, mop system and dock features, and the ODM house builds the chassis around whichever silicon fits the spec, which is why the same chassis so often turns up under more than one brand name.</p><p class="note">The frontier is the all-in-one dock: auto-empty dustbin, auto mop-wash with clean and dirty water tanks, hot-air drying, and even automatic detergent dispensing. Above this layer sit the brands — Roborock, Ecovacs, Dreame — and the Allwinner and Rockchip silicon they all share.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">Silver Star <span class="lat">Intelligent</span></h3><span class="house-loc"><span class="dot"></span>Longhua, Shenzhen</span><p class="house-body">Silver Star (Shenzhen Silver Star Intelligent Technology Group, founded 2005, Longhua District) is the dedicated ODM, the house that coined its own "OPM" model, ODM plus proprietary component R&amp;D plus market services. Since 2018 it has been sole strategic ODM partner to France's SEB Group for robot vacuums, and it also builds for Bissell and Xiaomi. Around 1,600 staff and roughly 50,000 units a month. The pure-play ODM without a competing retail brand.</p><ul class="facts"><li><b>2005</b>founded</li><li><b>Longhua, Shenzhen</b>base</li><li><b>SEB &middot; Bissell &middot; Xiaomi</b>clients</li><li><b>LiDAR &middot; gyro</b>navigation types</li></ul><div class="links"><a class="lnk" href="https://www.silverstar-robot.com" target="_blank" rel="noopener">silverstar-robot.com</a><a class="lnk contact" href="https://www.silverstar-robot.com/contact" target="_blank" rel="noopener">Contact form</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">Picea <span class="lat">Robotics</span></h3><span class="house-loc"><span class="dot"></span>Nanshan, Shenzhen</span><p class="house-body">Picea Robotics (formerly 3irobotix, founded 2016, Nanshan District) is the engineering powerhouse. Originally a SLAM-algorithm and chassis-platform house, it grew into the major ODM behind SharkNinja and Anker's Eufy robot vacuum lines. In late 2025 it reached agreement to acquire iRobot, maker of Roomba, out of Chapter 11 bankruptcy. Over 7,000 employees, with core IP in LiDAR navigation algorithms and harmonic-drive motors. The house with the deepest engineering stack.</p><ul class="facts"><li><b>2016</b>founded</li><li><b>Nanshan, Shenzhen</b>base</li><li><b>SharkNinja &middot; Eufy</b>ODM clients</li><li><b>7,000+</b>staff scale</li></ul><div class="links"><a class="lnk" href="https://www.3irobotix.net" target="_blank" rel="noopener">3irobotix.net</a><a class="lnk contact mail" href="mailto:support-us@3itech.com">&#9993; support-us@3itech.com</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">ILIFE <span class="lat">Zhiyi</span></h3><span class="house-loc"><span class="dot"></span>Longgang, Shenzhen</span><p class="house-body">ILIFE (Shenzhen Zhiyi Technology, founded 2013, Longgang District, with an additional base in Dongguan and R&amp;D in Hong Kong) started as an OEM for Ecovacs and Germany's Lukas before building its own brand. Now 89 patents and exports to more than 30 countries, with a tiered product line, the V, A, T and X series, spanning budget gyroscope units to LiDAR flagships. The house that knows both sides of the equation, contract OEM and brand owner.</p><ul class="facts"><li><b>2013</b>founded</li><li><b>Longgang, Shenzhen</b>base</li><li><b>LiDAR &middot; camera &middot; gyro</b>navigation</li><li><b>30+ countries</b>reach</li></ul><div class="links"><a class="lnk" href="https://www.iliferobot.com" target="_blank" rel="noopener">iliferobot.com</a><a class="lnk contact mail" href="mailto:sales@iliferobot.com">&#9993; sales@iliferobot.com</a></div></div></article><article class="house"><div class="house-no">04</div><div><h3 class="house-name">Proscenic <span class="lat">浦桑尼克</span></h3><span class="house-loc"><span class="dot"></span>Longgang, Shenzhen</span><p class="house-body">Proscenic (Shenzhen Proscenic Technology, brand launched 2013, with roots to 1993) is the quiet OEM behind several household names. Its client list includes Philips, Toshiba, Hitachi and Bissell, backed by more than 200 international invention patents and ISO 9001 / 14001 certification. Production ships to 32 countries. The house to talk to for a programme that needs a European or Japanese brand-quality pedigree already in place.</p><ul class="facts"><li><b>2013</b>brand</li><li><b>Longgang, Shenzhen</b>base</li><li><b>Philips &middot; Toshiba &middot; Hitachi</b>OEM clients</li><li><b>200+</b>patents IP</li></ul><div class="links"><a class="lnk" href="https://www.proscenic.com" target="_blank" rel="noopener">proscenic.com</a></div></div></article><article class="house"><div class="house-no">05</div><div><h3 class="house-name">Cleverobot <span class="lat">Lingxin</span></h3><span class="house-loc"><span class="dot"></span>Nancheng, Dongguan</span><p class="house-body">Cleverobot (Dongguan Lingxin Intelligent Technology, since 2018, Nancheng District) is the pure-play ODM factory built for volume. A 50,000-square-metre facility runs 135 injection-moulding machines and 15 production lines, turning out roughly four million units a year. It builds for Haier, Xiaomi, Electrolux, K&auml;rcher and Anker across the full navigation range, LiDAR, gyro, random-path, plus window-cleaning and pool-cleaning robots. The house for scale.</p><ul class="facts"><li><b>2018</b>since</li><li><b>Nancheng, Dongguan</b>base</li><li><b>4M units/year</b>capacity</li><li><b>Haier &middot; Electrolux &middot; K&auml;rcher</b>clients</li></ul><div class="links"><a class="lnk" href="https://www.cleverobot.com" target="_blank" rel="noopener">cleverobot.com</a><a class="lnk contact mail" href="mailto:molly@cleverobot.com">&#9993; molly@cleverobot.com</a></div></div></article></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>Work with me</div><h2 class="sec">Need help choosing the right factory?</h2><div class="rule"></div><div class="cta-block"><p>I've spent 18 years helping European startups manufacture in China. If you're building a hardware product and need someone who knows the process, book a free intro call.</p><div class="cta-actions"><a class="cta-btn" href="https://calendar.app.google/c4541LDyoKZ9HrdT9" target="_blank" rel="noopener">Book a call</a><a class="lnk mail" href="mailto:hans@thedesigndelta.com">hans@thedesigndelta.com</a></div><div class="cta-book"><p>Want the full playbook? <a href="https://thehardesthardwarelessons.com" target="_blank" rel="noopener"><strong>The Hardest Hardware Lessons</strong></a> covers every phase from first prototype to mass production, with the specific mistakes named and costs quantified.</p><div class="cta-book-links"><a class="lnk" href="https://hansolo42.gumroad.com/l/thehardesthardwarelessons" target="_blank" rel="noopener">Get digital edition</a><a class="lnk" href="https://www.amazon.com/dp/B0GT4W23K4" target="_blank" rel="noopener">Amazon hardcover</a></div></div></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>

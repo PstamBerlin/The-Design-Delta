@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Smart Scales — The Design Delta</title><meta name="description" content="Where smart scales are designed in the Pearl River Delta: BIA body composition, strain-gauge load cells, Bluetooth connectivity, companion apps, and five ODM houses across Zhongshan and Shenzhen."><link rel="canonical" href="https://thedesigndelta.com/smart-scales.html"><meta property="og:title" content="Smart Scales — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/smart-scales.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+.cta-block{margin-top:4px;max-width:680px}
+.cta-block>p{font-size:17.5px;color:var(--ink);margin:0 0 22px;max-width:640px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.cta-btn{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:10px 22px;display:inline-block;transition:background .14s,border-color .14s}
+.cta-btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.cta-book{border-top:1px solid var(--line);padding-top:20px}
+.cta-book p{font-size:15.5px;color:var(--ink-soft);margin:0 0 14px;max-width:640px}
+.cta-book-links{display:flex;gap:8px;flex-wrap:wrap}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">秤</div><div class="wrap"><p class="eyebrow reveal">Product 42 <span class="sep">&middot;</span> 智能体秤 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">Smart<br>Scales<span class="zh">智能体秤</span></h1><p class="tagline reveal d2">Four load cells, an impedance circuit, and a Bluetooth radio.</p><div class="herometa reveal d3"><div><b>Zhongshan &middot; Shenzhen</b>where it clusters</div><div><b>5 houses</b>profiled below</div><div><b>BIA &middot; strain gauge &middot; BLE</b>the tech</div><div><b>Body fat &middot; muscle &middot; water</b>the metrics</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>A smart scale is four <strong>strain-gauge load cells</strong> under tempered glass, a <strong>bioelectrical impedance analysis</strong> circuit, and a Bluetooth radio. The load cells measure weight to within 50&ndash;100 grams. The BIA circuit sends a low, safe current through ITO-coated electrodes on the glass surface to estimate body-fat percentage, muscle mass, water percentage, bone mass, and a dozen other metrics that are, at best, directional rather than clinical. The Bluetooth module sends it all to a companion app on the user&rsquo;s phone, which is where the brand actually lives.</p><p>Zhongshan is the old centre. <strong>Camry</strong> and its parent <strong>Senssun</strong> have been making scales there since 1975 &mdash; first mechanical, then digital, now connected &mdash; and the Zhongshan cluster&rsquo;s tooling, load-cell, and glass-tempering supply base reflects five decades of specialisation. Shenzhen grafted the smart layer on top: BLE modules, app development, cloud backends, and the startup culture that spawned Yunmai (ex-Xiaomi founders) and Yolanda. The two cities sit 90 kilometres apart and function as one supply chain, with Zhongshan supplying the weighing heritage and Shenzhen supplying the connectivity and software.</p><p>The <strong>white-label app</strong> is the real product. Every ODM in this space offers SDK-level app reskinning so a brand can launch its own-branded iOS and Android app on top of the factory&rsquo;s algorithm backend and cloud infrastructure. The brand&rsquo;s customer sees a branded app with branded metrics; the ODM runs the servers, maintains the BIA algorithm, and pushes firmware updates. The hardware is nearly interchangeable across factories. The stickiness is in the app and the data &mdash; once a user has six months of body-composition history, switching to a competitor&rsquo;s app means starting over.</p><p class="note">The frontier is medical-grade body composition &mdash; segmental BIA with 8-electrode hand-and-foot arrays, FDA-listed devices, and integration with telehealth platforms. Transtek, publicly listed on the Shenzhen Stock Exchange as Lifesense Group (300562), is the ODM bridging consumer and medical, supplying Withings and Beurer alongside its own Lifesense brand while building ECG watches and remote-patient-monitoring systems.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">Transtek <span class="lat">乐心医疗</span></h3><span class="house-loc"><span class="dot"></span>Zhongshan</span><p class="house-body">Transtek (Guangdong Transtek Medical Electronics, founded 2002, Torch High-Tech Industrial Development Zone, Zhongshan, SZSE: 300562 as Lifesense Group) is the largest and most vertically integrated smart-scale ODM in the PRD. A 25,000&thinsp;m&sup2; facility with 2,000-plus employees and 80-plus R&amp;D engineers, producing roughly 6 million units per year across smart body-fat scales, blood pressure monitors, blood glucose monitors, ECG watches, and wearables. Withings and Beurer are named as existing customers. ISO certified, FCC and CE compliant, with the Shenzhen Stock Exchange listing providing independent financial transparency.</p><ul class="facts"><li><b>2002</b>founded</li><li><b>Zhongshan</b>base</li><li><b>Scales &middot; BPMs &middot; ECG watches</b>range</li><li><b>Withings &middot; Beurer</b>clients</li></ul><div class="links"><a class="lnk" href="https://www.transtekcorp.com" target="_blank" rel="noopener">transtekcorp.com</a><a class="lnk contact mail" href="mailto:inquiry@transtekcorp.com">&#9993; inquiry@transtekcorp.com</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">Camry <span class="lat">凯米 / Senssun 三雄</span></h3><span class="house-loc"><span class="dot"></span>Zhongshan</span><p class="house-body">Camry (Zhongshan Camry Electronic, part of Guangdong Senssun Weighing Apparatus Group, SZSE: 002870, heritage dating to 1975, Baishawan Industrial Park, East District, Zhongshan) is the volume king &mdash; China&rsquo;s household-scale market share and export leader for 16 consecutive years by the company&rsquo;s own count. Six ISO 9001-certified factories, 107,000&thinsp;m&sup2; combined floor space, 29 assembly lines, 3,000 workers, and 2.5 million pieces per month capacity. Over 450 models spanning bathroom scales, body-fat and hydration analysers, kitchen scales, and luggage scales, with a 50-person R&amp;D team releasing 45 new designs per year. CE, GS, RoHS, LFGB, and REACH certified.</p><ul class="facts"><li><b>1975</b>heritage</li><li><b>Zhongshan</b>base</li><li><b>2.5M pieces/month</b>capacity</li><li><b>SZSE: 002870</b>listed</li></ul><div class="links"><a class="lnk" href="https://www.camry.cn" target="_blank" rel="noopener">camry.cn</a><a class="lnk contact mail" href="mailto:sales@camry.com.cn">&#9993; sales@camry.com.cn</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">Canny <span class="lat">凯立电子</span></h3><span class="house-loc"><span class="dot"></span>Zhongshan</span><p class="house-body">Canny (Zhongshan Canny Electronics, founded 2010, Torch Development Zone, Zhongshan) bridges the old Zhongshan weighing heritage and the new Bluetooth-connected world. ISO 9001:2015, ISO 13485:2016, ISO 14001:2015, and BSCI certified, with product-level EMC, RoHS, PAH, LFGB, FCC, and UKCA compliance. Manufactures Renpho-branded body-fat scales per supplier listings &mdash; Renpho being a major US Amazon smart-scale brand &mdash; and also sells under its own SmartApple-CN and FitGo-CN lines. Bluetooth, kitchen, coffee, bathroom, body-fat, and luggage scales, with in-house module and app SDK design and custom weighing-sensor development. About 2 million pieces per year capacity.</p><ul class="facts"><li><b>2010</b>founded</li><li><b>Zhongshan</b>base</li><li><b>Renpho OEM</b>client</li><li><b>ISO 13485 medical QMS</b>certified</li></ul><div class="links"><a class="lnk" href="https://www.cannyscale.com" target="_blank" rel="noopener">cannyscale.com</a><a class="lnk contact mail" href="mailto:amilly@cannyscale.com">&#9993; amilly@cannyscale.com</a></div></div></article><article class="house"><div class="house-no">04</div><div><h3 class="house-name">Yolanda <span class="lat">优兰得科技</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">Yolanda (Shenzhen Yolanda Technology, founded 2013) is the Shenzhen-native software-first approach to smart scales. ISO 9001, ISO 13485, BSCI, and CFDA certified, with product-level BLE, FCC, CE, KC, FDA, PSE, TELEC, RoHS, and REACH compliance. The differentiator is the &ldquo;closed-loop&rdquo; offering: hardware, companion app, and cloud data platform as one integrated package, with 13-metric body-composition analysis via BIA. Also produces kitchen scales, massage guns, and blood pressure monitors. Offers full OEM/ODM with software re-engineering &mdash; white-label app development &mdash; as a core service. Over 10 patents and 12 software copyrights.</p><ul class="facts"><li><b>2013</b>founded</li><li><b>Shenzhen</b>base</li><li><b>Hardware + app + cloud</b>closed-loop ODM</li><li><b>CFDA &middot; FDA &middot; ISO 13485</b>medical certs</li></ul><div class="links"><a class="lnk" href="https://www.yolanda.hk" target="_blank" rel="noopener">yolanda.hk</a><a class="lnk contact mail" href="mailto:service@yolanda.hk">&#9993; service@yolanda.hk</a></div></div></article><article class="house"><div class="house-no">05</div><div><h3 class="house-name">Unique Scales <span class="lat">优尼科电子</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen &middot; Longgang</span><p class="house-body">Unique Scales (Shenzhen Unique Scales, founded 2002, Pingdi Street, Longgang District) is the high-volume Shenzhen factory with the broadest claimed client roster &mdash; Xiaomi, Anker, Lenovo, Etekcity, and Samsung, per the company&rsquo;s own disclosure. A 35,000&thinsp;m&sup2; factory with 21&ndash;28 production lines, 700&ndash;1,000-plus employees, and 12&ndash;25 million units per year capacity at 99.55% on-time delivery. ISO 9001, ISO 13485, ISO 14001, BSCI, and GRS certified, with T&Uuml;V Rheinland reports on file. WiFi (2.4G/5G) and Bluetooth (4.0&ndash;5.0) smart scales, BIA body-fat scales, solar-powered scales, kitchen scales, and baby scales, with Zigbee, Z-Wave, and Tuya smart-home integration. Over 40 proprietary body-fat algorithms with iOS and Android app development in-house.</p><ul class="facts"><li><b>2002</b>founded</li><li><b>Longgang, Shenzhen</b>base</li><li><b>Xiaomi &middot; Anker &middot; Samsung</b>clients</li><li><b>12&ndash;25M units/year</b>capacity</li></ul><div class="links"><a class="lnk" href="https://www.smartscales.com" target="_blank" rel="noopener">smartscales.com</a><a class="lnk contact" href="https://www.smartscales.com/Contact" target="_blank" rel="noopener">Contact</a></div></div></article></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>Work with me</div><h2 class="sec">Need help choosing the right factory?</h2><div class="rule"></div><div class="cta-block"><p>I've spent 18 years helping European startups manufacture in China. If you're building a hardware product and need someone who knows the process, book a free intro call.</p><div class="cta-actions"><a class="cta-btn" href="https://calendar.app.google/c4541LDyoKZ9HrdT9" target="_blank" rel="noopener">Book a call</a><a class="lnk mail" href="mailto:hans@thedesigndelta.com">hans@thedesigndelta.com</a></div><div class="cta-book"><p>Want the full playbook? <a href="https://thehardesthardwarelessons.com" target="_blank" rel="noopener"><strong>The Hardest Hardware Lessons</strong></a> covers every phase from first prototype to mass production, with the specific mistakes named and costs quantified.</p><div class="cta-book-links"><a class="lnk" href="https://hansolo42.gumroad.com/l/thehardesthardwarelessons" target="_blank" rel="noopener">Get digital edition</a><a class="lnk" href="https://www.amazon.com/dp/B0GT4W23K4" target="_blank" rel="noopener">Amazon hardcover</a></div></div></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>

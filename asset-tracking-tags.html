@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Asset Tracking Tags — The Design Delta</title><meta name="description" content="Where asset tracking tags are designed in the Pearl River Delta: BLE beacons, UWB ranging, Apple Find My, Google Find My Device, and five ODM houses across Shenzhen's Longhua District."><link rel="canonical" href="https://thedesigndelta.com/asset-tracking-tags.html"><meta property="og:title" content="Asset Tracking Tags — The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/asset-tracking-tags.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.products{margin-top:4px}
+.product-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:var(--card);border-radius:7px;margin-bottom:14px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.product-card:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--paper-2);box-shadow:0 1px 0 var(--accent),0 20px 44px -26px rgba(60,40,25,.55)}
+.pc-desig{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:10px 10px;align-self:start;background:var(--paper)}
+.product-card:hover .pc-desig{border-color:var(--accent);color:var(--accent)}
+.pc-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.pc-title .zh{font-size:15px;color:var(--accent);font-weight:600}
+.pc-sub{color:var(--ink-soft);font-size:15px;margin-top:7px;max-width:560px}
+.pc-meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);text-align:right;white-space:nowrap}
+.pc-meta .arrow{display:block;color:var(--accent);font-size:21px;margin-top:6px;transition:transform .18s}
+.product-card:hover .pc-meta .arrow{transform:translateX(5px)}
+
+.houses{margin-top:6px}
+.house{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.house:last-child{border-bottom:1px solid var(--line)}
+.house-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.house-name{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.06;color:var(--ink);display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin:0;letter-spacing:-.015em}
+.house-name .lat{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);font-weight:400;letter-spacing:.02em}
+.house-loc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-transform:uppercase}
+.house-loc .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.house-body{font-size:16.5px;margin:14px 0 0;max-width:640px;color:var(--ink)}
+.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 24px;max-width:660px}
+.facts li{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:7px;line-height:1.4}
+.facts li b{display:block;color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.contact{color:var(--accent);border-color:var(--accent-soft);background:var(--accent-soft)}
+.lnk.contact::after{content:"\2197";color:var(--accent)}
+.lnk.contact:hover{border-color:var(--accent);background:#EAC9C1}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal — sections open as they enter (flash-free, gated by html.js) */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .product-card,html.js main .house{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .house{grid-template-columns:1fr;gap:6px}
+  .house-no{font-size:30px}
+  .product-card{grid-template-columns:auto 1fr}
+  .pc-meta{grid-column:1/-1;text-align:left}
+  .pc-meta .arrow{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.product-card{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+.cta-block{margin-top:4px;max-width:680px}
+.cta-block>p{font-size:17.5px;color:var(--ink);margin:0 0 22px;max-width:640px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.cta-btn{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:10px 22px;display:inline-block;transition:background .14s,border-color .14s}
+.cta-btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.cta-book{border-top:1px solid var(--line);padding-top:20px}
+.cta-book p{font-size:15.5px;color:var(--ink-soft);margin:0 0 14px;max-width:640px}
+.cta-book-links{display:flex;gap:8px;flex-wrap:wrap}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav">where it's designed</nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">寻</div><div class="wrap"><p class="eyebrow reveal">Product 43 <span class="sep">&middot;</span> 追踪标签 <span class="sep">&middot;</span> 珠三角</p><h1 class="reveal d1">Asset<br>Tracking Tags<span class="zh">追踪标签</span></h1><p class="tagline reveal d2">A coin cell, a BLE radio, a speaker, and a network of billions.</p><div class="herometa reveal d3"><div><b>Shenzhen &middot; Longhua</b>where it clusters</div><div><b>5 houses</b>profiled below</div><div><b>BLE 5.x &middot; UWB &middot; Find My</b>the protocols</div><div><b>Tags &middot; beacons &middot; RTLS</b>the formats</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / The landscape</div><h2 class="sec">The landscape</h2><div class="rule"></div><div class="prose"><p>An asset tracking tag is a <strong>coin-cell battery</strong>, a <strong>Bluetooth Low Energy radio</strong>, a speaker, and an antenna in a plastic disc. The radio broadcasts a BLE signal that nearby smartphones relay to a cloud network &mdash; Apple&rsquo;s Find My or Google&rsquo;s Find My Device &mdash; which triangulates position without GPS or cellular connectivity, extending battery life to a year or more on a single CR2032. <strong>UWB</strong> (ultra-wideband) adds precision: where BLE gives you a room, UWB gives you a shelf, with sub-30-centimetre ranging via time-of-flight measurement on Qorvo&rsquo;s DW3000 chip. The two protocols are complementary, not competing &mdash; BLE for coverage, UWB for the last metre.</p><p>The <strong>MFi certification</strong> is the moat. Apple&rsquo;s Made for iPhone programme controls access to the Find My network, and the approval rate for Chinese factories is reportedly around two percent. The handful of Shenzhen ODMs that hold MFi licenses &mdash; Minew, KKM, GUO LINK &mdash; can build tags that show up natively in Apple&rsquo;s Find My app with precision finding and separation alerts, a capability most competitors cannot offer. Google&rsquo;s Find My Device network is more open, and Android-compatible trackers face a lower certification bar, but the Apple ecosystem commands the premium price and the deeper integration.</p><p>This is <strong>Longhua District&rsquo;s</strong> category. The five houses profiled below all cluster in Shenzhen&rsquo;s Longhua and Bao&rsquo;an, where the Nordic Semiconductor distributor network, SMT assembly houses, RF compliance testing labs, and coin-cell battery suppliers sit within a few kilometres of each other. The same factories also build BLE beacons for retail analytics, RTLS badges for hospital asset tracking, and IoT sensors for cold-chain logistics &mdash; the consumer key-finder is one product line inside a broader indoor-positioning business. Nordic&rsquo;s nRF52 and nRF53 series chips are the de facto standard across the sector.</p><p class="note">The frontier is dual-network, dual-protocol: tags that work on both Apple Find My and Google Find My Device simultaneously, with UWB for precision and BLE for coverage. GUO LINK&rsquo;s SeekTag line and Minew&rsquo;s cross-platform modules point in this direction. The other frontier is the tag disappearing into the product &mdash; embedded tracking in luggage, bicycles, wallets, and pet collars rather than a standalone disc on a keyring. The tracker becomes invisible infrastructure.</p></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>02 / Solution houses</div><h2 class="sec">The solution houses</h2><div class="rule"></div><div class="houses"><article class="house"><div class="house-no">01</div><div><h3 class="house-name">Minew <span class="lat">云里物里</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen &middot; Longhua</span><p class="house-body">Minew (Shenzhen Minew Technologies, founded 2007, Longhua District, Beijing Stock Exchange: 920374) is the category leader and the most credentialled house in the PRD tracker space. MFi licensed (MFi-21-061128), Bluetooth SIG (BQB), FiRa Consortium member for UWB, plus CE, FCC, RoHS, ISO 9001, ISO 14001, ISO 45001, BSCI, and Sedex. Over 300 million devices shipped from a 15,000&thinsp;m&sup2; smart-manufacturing facility. Technology and ecosystem partners include Google, Huawei, Cisco, Siemens, Alibaba, Nordic Semiconductor, HERE, and Quuppa. Produces BLE beacons, asset tags, personnel safety tags, UWB modules, AoA/AoD RTLS systems, LoRaWAN devices, GNSS trackers, and Apple Find My-compatible key finders.</p><ul class="facts"><li><b>2007</b>founded</li><li><b>Longhua, Shenzhen</b>base</li><li><b>MFi &middot; FiRa &middot; BQB</b>certifications</li><li><b>300M+ devices shipped</b>scale</li></ul><div class="links"><a class="lnk" href="https://www.minew.com" target="_blank" rel="noopener">minew.com</a><a class="lnk contact" href="https://www.minew.com/contact-us/" target="_blank" rel="noopener">Contact</a></div></div></article><article class="house"><div class="house-no">02</div><div><h3 class="house-name">MOKOSmart <span class="lat">MOKO Technology</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen &middot; Longhua</span><p class="house-body">MOKOSmart (MOKO Technology, founded 2006, BLE R&amp;D division launched 2015, Longhua District) is the full-service EMS and ODM house for BLE and LoRaWAN tracking hardware. ISO 9001:2015, ISO 14001, ISO 13485, BSCI, UL, CE, FCC, and RoHS certified. A 12,400&thinsp;m&sup2; factory with 5 SMT lines producing 15-plus SKUs of BLE asset tags (M-series), UWB trackers, LoRaWAN trackers, and personnel safety badges. Full OEM/ODM/white-label and EMS services across logistics, healthcare, retail, industrial, construction, and education verticals in 100-plus countries. Nordic nRF52 and nRF53-based designs.</p><ul class="facts"><li><b>2006</b>founded</li><li><b>Longhua, Shenzhen</b>base</li><li><b>BLE &middot; UWB &middot; LoRaWAN</b>protocols</li><li><b>ISO 13485 &middot; UL</b>certifications</li></ul><div class="links"><a class="lnk" href="https://www.mokosmart.com" target="_blank" rel="noopener">mokosmart.com</a><a class="lnk contact" href="https://www.mokosmart.com/contact-us/" target="_blank" rel="noopener">Contact</a></div></div></article><article class="house"><div class="house-no">03</div><div><h3 class="house-name">HoneyComm <span class="lat">鸿科通信</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen &middot; Longhua</span><p class="house-body">HoneyComm (HoneyComm IoT Technology (Shenzhen), founded circa 2006&ndash;2008, Longhua District) brings manufacturing depth &mdash; 10 production lines and 13 SMT lines with in-house PCB design, manufacturing, and assembly. Produces BLE beacons, AirTag-style &ldquo;Smart Air Tags&rdquo; based on Find My technology, RTLS AoA gateways and tags, GNSS/4G GPS trackers, and even agricultural BLE ear tags for livestock tracking. Participation in Apple&rsquo;s &ldquo;Works with Apple&rdquo; programme for select products. The broadest application range of any house on this list, from consumer key-finders to agricultural IoT.</p><ul class="facts"><li><b>~2006</b>founded</li><li><b>Longhua, Shenzhen</b>base</li><li><b>Find My &middot; RTLS &middot; GNSS</b>range</li><li><b>13 SMT lines</b>capacity</li></ul><div class="links"><a class="lnk" href="https://www.honeycomm.net" target="_blank" rel="noopener">honeycomm.net</a><a class="lnk contact mail" href="mailto:sue@honeycomm.net">&#9993; sue@honeycomm.net</a></div></div></article><article class="house"><div class="house-no">04</div><div><h3 class="house-name">KKM <span class="lat">Smart Solutions</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen &middot; Longhua</span><p class="house-body">KKM (Shenzhen KKM Company, founded 2008, Longhua District, Baoneng Science &amp; Technology Park) is a verified MFi licensee that explicitly targets the AirTag-alternative and key-finder category alongside industrial asset tracking. Its iTrack series of smart key finders and K4W/K7W/C3W UWB tag and badge line work with Apple&rsquo;s Nearby protocol. ISO 9001, CE, FCC, Bluetooth SIG (BQB), REACH, and RoHS certified. Also produces BLE iBeacon and Eddystone beacons, smart luggage locks, LTE/NB-IoT beacons, LoRaWAN devices, and Bluetooth electronic shelf labels.</p><ul class="facts"><li><b>2008</b>founded</li><li><b>Longhua, Shenzhen</b>base</li><li><b>MFi &middot; UWB &middot; iTrack</b>product lines</li><li><b>Key finders &middot; RTLS &middot; ESL</b>range</li></ul><div class="links"><a class="lnk" href="https://www.kkmcn.com" target="_blank" rel="noopener">kkmcn.com</a><a class="lnk contact mail" href="mailto:sales@kkmcn.com">&#9993; sales@kkmcn.com</a></div></div></article><article class="house"><div class="house-no">05</div><div><h3 class="house-name">GUO LINK <span class="lat">国联时代科技</span></h3><span class="house-loc"><span class="dot"></span>Shenzhen</span><p class="house-body">GUO LINK (Shenzhen Guolian Times Technology, founded 2019) is the newest and most consumer-focused house on this list, positioned as a Find My and anti-loss tag specialist. MFi certification obtained in 2023 with official MFi factory qualification, plus ISO 9001, CE, RoHS, IP68, and FCC. Produces MFi-certified Apple Find My tags and SeekTag Android/Google Find My Device-compatible trackers, with early-mover work on UWB plus dual-system (iOS and Android) trackers with pop-up pairing. Applications span luggage, bicycles, baby strollers, wallets, pets, and keys. A 15,000&thinsp;m&sup2; self-owned facility. Claims to serve 100-plus global brands and partners.</p><ul class="facts"><li><b>2019</b>founded</li><li><b>Shenzhen</b>base</li><li><b>MFi &middot; Find My &middot; Google FMD</b>certifications</li><li><b>Dual-system iOS/Android</b>specialty</li></ul><div class="links"><a class="lnk" href="https://guolink.com" target="_blank" rel="noopener">guolink.com</a><a class="lnk contact" href="https://guolink.com/contact" target="_blank" rel="noopener">Contact</a></div></div></article></div><div style="height:46px"></div><div class="desig"><span class="tick"></span>Work with me</div><h2 class="sec">Need help choosing the right factory?</h2><div class="rule"></div><div class="cta-block"><p>I've spent 18 years helping European startups manufacture in China. If you're building a hardware product and need someone who knows the process, book a free intro call.</p><div class="cta-actions"><a class="cta-btn" href="https://calendar.app.google/c4541LDyoKZ9HrdT9" target="_blank" rel="noopener">Book a call</a><a class="lnk mail" href="mailto:hans@thedesigndelta.com">hans@thedesigndelta.com</a></div><div class="cta-book"><p>Want the full playbook? <a href="https://thehardesthardwarelessons.com" target="_blank" rel="noopener"><strong>The Hardest Hardware Lessons</strong></a> covers every phase from first prototype to mass production, with the specific mistakes named and costs quantified.</p><div class="cta-book-links"><a class="lnk" href="https://hansolo42.gumroad.com/l/thehardesthardwarelessons" target="_blank" rel="noopener">Get digital edition</a><a class="lnk" href="https://www.amazon.com/dp/B0GT4W23K4" target="_blank" rel="noopener">Amazon hardcover</a></div></div></div><a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .product-card, main .house");["main .product-card","main .house"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>
