@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Change Notice / The Design Delta</title><meta name="description" content="Change Notice is the monthly newsletter of The Design Delta: what moved in the rules, what moved at the 183 design houses, and one number, for people building hardware in the Pearl River Delta."><link rel="canonical" href="https://thedesigndelta.com/newsletter.html"><meta property="og:title" content="Change Notice / The Design Delta"><meta property="og:url" content="https://thedesigndelta.com/newsletter.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{
+  --paper:#F7F2E6; --paper-2:#FCFAF3; --card:#FBF7EC;
+  --ink:#23201A; --ink-soft:#6A6253; --faint:#9C9484;
+  --line:#E0D8C6; --line-2:#EDE7D8;
+  --accent:#B23A2E; --accent-deep:#8E2C22; --accent-soft:#F0DDD7;
+  --cjk:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.measure{max-width:680px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+.zh{font-family:var(--cjk)}
+.mono{font-family:"IBM Plex Mono",monospace}
+.toprule{height:3px;background:var(--accent)}
+
+.topbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;gap:11px}
+.brand .zh{font-weight:600;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.topnav{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--ink-soft)}
+.topnav a{color:var(--ink-soft)}
+.topnav a:hover{color:var(--accent)}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0;text-transform:uppercase;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+.eyebrow .sep{color:var(--faint)}
+.desig{display:inline-flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.desig .tick{width:8px;height:8px;background:var(--accent);flex:none}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,40px);line-height:1.02;margin:0;color:var(--ink);letter-spacing:-.015em}
+.rule{height:1px;background:var(--line);margin:14px 0 28px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:46px;height:3px;background:var(--accent)}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:58px 0 46px}
+.hero .wm{position:absolute;right:-20px;bottom:-70px;font-family:var(--cjk);font-weight:700;font-size:clamp(240px,40vw,460px);line-height:.7;color:rgba(35,32,26,.035);pointer-events:none;user-select:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,92px);line-height:.96;letter-spacing:-.025em;margin:16px 0 0;color:var(--ink)}
+.hero h1 .zh{display:block;font-size:.34em;color:var(--accent);font-weight:600;letter-spacing:.02em;margin-top:16px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;color:var(--ink);margin:24px 0 0;max-width:640px}
+.hero .lede{font-size:17.5px;margin:18px 0 0;max-width:660px;color:var(--ink-soft)}
+.herometa{display:flex;gap:24px 34px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.herometa b{display:block;color:var(--ink);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:1px;letter-spacing:-.01em}
+
+.prose p{margin:0 0 18px;max-width:680px;color:var(--ink)}
+.prose p:first-of-type::first-letter{font-family:var(--serif);font-weight:600;font-size:3.3em;line-height:.78;float:left;margin:7px 12px 0 0;color:var(--accent)}
+.prose .note{font-size:14.5px;color:var(--ink-soft);border-left:3px solid var(--accent);padding-left:16px;margin:26px 0;max-width:660px}
+.prose strong{color:var(--ink);font-weight:600}
+
+.step{display:grid;grid-template-columns:66px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step-no{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--faint);letter-spacing:-.02em}
+.step-title{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.12;color:var(--ink);margin:0;letter-spacing:-.015em}
+.step-body{font-size:16.5px;margin:10px 0 0;max-width:640px;color:var(--ink-soft)}
+
+.boundary-list{list-style:none;margin:0;padding:0;max-width:680px}
+.boundary-list li{font-size:17px;color:var(--ink);padding:14px 0;border-top:1px solid var(--line);display:flex;gap:14px;align-items:baseline}
+.boundary-list li:last-child{border-bottom:1px solid var(--line)}
+.boundary-list li::before{content:"\00D7";font-family:var(--serif);font-weight:600;font-size:22px;color:var(--accent);flex:none;line-height:1}
+
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.lnk{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;background:var(--paper);transition:background .14s,border-color .14s,color .14s}
+.lnk:hover{border-color:var(--ink);background:var(--paper-2)}
+.lnk::after{content:"\2197";color:var(--ink-soft)}
+.lnk:hover::after{color:var(--ink)}
+.lnk.mail::after{content:""}
+
+.backlink{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);display:inline-block;margin-top:32px}
+.backlink::before{content:"\2190  "}
+.backlink:hover{color:var(--accent)}
+
+.cta-block{margin-top:4px;max-width:680px}
+.cta-block>p{font-size:17.5px;color:var(--ink);margin:0 0 22px;max-width:640px}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.cta-btn{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;color:#fff;background:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:10px 22px;display:inline-block;transition:background .14s,border-color .14s}
+.cta-btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.cta-book{border-top:1px solid var(--line);padding-top:20px}
+.cta-book p{font-size:15.5px;color:var(--ink-soft);margin:0 0 14px;max-width:640px}
+.cta-book-links{display:flex;gap:8px;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);background:var(--paper);margin-top:64px}
+.foot-inner{padding:30px 0 64px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.75}
+.foot-inner .title{color:var(--ink);letter-spacing:.01em;font-family:var(--serif);font-weight:600;font-size:14px}
+.foot-inner a{color:var(--accent)}
+
+/* hero load-in */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+.reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.19s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* scroll reveal */
+html.js main .desig,html.js main h2.sec,html.js main .rule,html.js main .prose>p,
+html.js main .measure,html.js main .step,html.js main .boundary-list li,html.js main .cta-block{
+  opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+html.js main .is-in{opacity:1!important;transform:none!important}
+
+@media (max-width:680px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 32px}
+  .hero .wm{font-size:300px;bottom:-30px;right:-30px}
+  .step{grid-template-columns:1fr;gap:6px}
+  .step-no{font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+
+/* ---- newsletter page ---- */
+.issue-map{list-style:none;margin:6px 0 0;padding:0}
+.issue-map li{display:grid;grid-template-columns:74px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line)}
+.issue-map li:last-child{border-bottom:1px solid var(--line)}
+.issue-map .no{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;color:var(--ink-soft);border:1px solid var(--line);border-radius:5px;padding:9px 0;text-align:center;align-self:start;background:var(--paper)}
+.issue-map h3{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.08;margin:0;letter-spacing:-.015em;display:flex;gap:11px;align-items:baseline;flex-wrap:wrap}
+.issue-map h3 .zh{font-size:13px;color:var(--accent);font-weight:600}
+.issue-map p{margin:9px 0 0;font-size:16px;color:var(--ink-soft);max-width:600px}
+.issue-map .words{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);margin-top:9px;letter-spacing:.04em}
+
+.signup{border:1px solid var(--line);background:var(--card);border-radius:7px;padding:28px 26px;max-width:620px;margin-top:4px}
+.signup form{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 14px}
+.signup input[type=email]{flex:1 1 260px;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:5px;padding:12px 14px}
+.signup input[type=email]:focus{outline:none;border-color:var(--accent)}
+.signup button{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;color:var(--paper-2);background:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:12px 22px;cursor:pointer}
+.signup button:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.signup .consent{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:0}
+.signup .lead-in{margin:0 0 16px;font-size:16px;color:var(--ink)}
+.signup .cta-btn{display:inline-block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.colbox{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--paper-2);border-radius:5px;padding:20px 22px;max-width:660px;margin:22px 0 0}
+.prose .colbox p:first-of-type::first-letter,.prose .signup p:first-of-type::first-letter{font-family:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;float:none;margin:0;color:inherit}
+.colbox .lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 9px}
+.colbox p{margin:0 0 12px;font-size:15.5px;color:var(--ink)}
+.colbox p:last-child{margin-bottom:0}
+.rules{list-style:none;margin:18px 0 0;padding:0;max-width:660px;counter-reset:r}
+.rules li{counter-increment:r;position:relative;padding:0 0 0 34px;margin:0 0 11px;font-size:15.5px;color:var(--ink)}
+.rules li::before{content:counter(r,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--accent)}
+.archive{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);border:1px dashed var(--line);border-radius:6px;padding:22px 24px;max-width:620px;background:var(--paper-2)}
+@media (max-width:680px){
+  .issue-map li{grid-template-columns:1fr;gap:8px}
+  .issue-map .no{justify-self:start;padding:8px 14px}
+  .signup{padding:22px 20px}
+}
+
+/* scroll reveal targets for this page */
+html.js main .issue-map li,html.js main .signup,html.js main .archive{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .58s cubic-bezier(.2,.7,.2,1)}
+</style><script>try{if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js");}catch(e){}</script></head><body><div class="toprule"></div><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" style="color:inherit">The Design Delta<span class="zh">设计三角洲</span></a><nav class="topnav"><a href="index.html">products</a> &middot; <a href="work-with-me.html">work with me</a></nav></div></header><section class="hero"><div class="wm zh" aria-hidden="true">变</div><div class="wrap"><p class="eyebrow reveal">Newsletter <span class="sep">&middot;</span> 变更通知 <span class="sep">&middot;</span> monthly</p><h1 class="reveal d1">Change<br>Notice.<span class="zh">变更通知</span></h1><p class="tagline reveal d2">The field guide tells you how things are. This tells you when they move.</p><p class="lede reveal d2">A reference page cannot say that a transition period was extended, that a sales address has gone dead, or that a figure on the page is two years old. Once a month, this does.</p><div class="herometa reveal d3"><div><b>Monthly</b>first Tuesday, 08:00 Berlin</div><div><b>Six sections</b>same order every issue</div><div><b>43 categories</b>183 design houses</div><div><b>Free</b>no sponsors, no roundups</div></div></div></section><main><div class="wrap" style="padding-top:48px"><div class="desig"><span class="tick"></span>01 / What it is</div><h2 class="sec">A dated correction to a page that has no dates</h2><div class="rule"></div><div class="prose">
+<p>This site is a reference. It says which house owns the reference design, where it sits, and how to reach it. What it cannot say is <strong>when</strong>. A rule that bites on a date, a contact that worked last spring, a patent count from a filing year nobody printed &mdash; a static page states all three in the present tense and goes on stating them long after they stop being true.</p>
+<p>Change Notice is the part that carries the date. Every issue names what moved since the last one, which of the forty-three categories it lands on, and who pays for it. Where the site was wrong, this is where it says so, with the page named and the length of time the error stood.</p>
+<p class="note">An engineering change notice is the document a factory issues when something you already signed off has moved. It is the one piece of paper nobody files unread. That is the intention here.</p>
+<p>It is written from Berlin by the person who wrote the site, out of work already being done: quotes that came in this month, factories visited this month, addresses that bounced this month. Nothing here is researched specially for the newsletter, which is the only reason it can keep going.</p>
+</div></div><div class="wrap" style="padding-top:56px"><div class="desig"><span class="tick"></span>02 / The issue</div><h2 class="sec">Six sections, always in this order</h2><div class="rule"></div><div class="measure"><p style="color:var(--ink-soft);margin:0 0 26px">Learn the numbers and you can skip to what you need. Between 1,300 and 1,800 words, which is about six minutes.</p></div>
+<ul class="issue-map">
+<li><span class="no">01</span><div><h3>The countdown<span class="zh">倒计时</span></h3><p>A standing table of dated obligations &mdash; the battery rule, the machinery regulation, the F&#8209;gas phase&#8209;down &mdash; each with its status and the categories it hits. The rows that did not move are stated as not having moved. This is the section with a cost attached to not reading it.</p><p class="words">200&ndash;300 words</p></div></li>
+<li><span class="no">02</span><div><h3>House watch<span class="zh">动态</span></h3><p>Six to ten one&#8209;line moves at the 183 profiled houses. Listings, capacity, acquisitions, a sales address that has gone dead, a figure on the site that has aged. Each links to the page it amends.</p><p class="words">250&ndash;350 words</p></div></li>
+<li><span class="no">03</span><div><h3>The number<span class="zh">数字</span></h3><p>One figure, with its method and the date it was quoted. Tooling cost by cavity count. Certification cost and turnaround for one directive. Cable&#8209;assembly labour. The same field returns each year, so the archive becomes a series rather than scattered anecdotes.</p><p class="words">150&ndash;250 words</p></div></li>
+<li><span class="no">04</span><div><h3>From the floor<span class="zh">现场</span></h3><p>The long slot, and one of exactly four things: a field note from somewhere specific, a failure post&#8209;mortem with what containment cost, one house in more depth than a card allows, or a procedure you can run tomorrow morning. Never a link roundup.</p><p class="words">300&ndash;450 words</p></div></li>
+<li><span class="no">05</span><div><h3>The question<span class="zh">该问什么</span></h3><p>One diligence question in the words you would use in the room, the two answers you will get, and what each one tells you. One question. Never a question with no wrong answer.</p><p class="words">100&ndash;150 words</p></div></li>
+<li><span class="no">06</span><div><h3>Corrections<span class="zh">勘误</span></h3><p>What was wrong, what changed, and what arrived. Including the embarrassing ones. A correction that changes a buying decision does not wait for section 06 &mdash; it goes in the first forty words.</p><p class="words">100&ndash;200 words</p></div></li>
+</ul></div><div class="wrap" style="padding-top:56px"><div class="desig"><span class="tick"></span>03 / The column</div><h2 class="sec">One Unit <span class="zh" style="font-size:.42em;color:var(--accent)">一台</span></h2><div class="rule"></div><div class="prose">
+<p>Roughly every third issue carries a field note from an operator with exactly one machine. Consumer hardware is reviewed almost entirely on the week it arrives, by people who never use it again. <strong>One Unit reports at thirty days, ninety days, and six months</strong>, on a single unit, in the place it actually gets used.</p>
+<p>It is written by Peter, who is eleven and runs a market stand in Berlin. An adult edits it for accuracy, safety and privacy, and for nothing else. No observation in it was added by anyone but him.</p>
+<p>That is not a novelty slot. A reader deciding between two machines has no way to find out what one of them is like after ninety days of being carried, dropped, and run by a person who is not being paid to like it. This column is the layer beneath a launch review.</p>
+<div class="colbox"><p class="lbl">The standing rules</p>
+<ol class="rules">
+<li>Hardware is bought wherever possible. A supplied sample buys testing, never coverage.</li>
+<li>Consumables are always bought at retail. Running cost is the thing under test.</li>
+<li>Publication is decided after testing. Refusing to publish is always available, and is logged either way.</li>
+<li>No supplier sees a draft, a date, or a question list in advance.</li>
+<li>Every claim carries its method: what was done, how many times, under what conditions.</li>
+<li>Every instalment names at least one thing that failed, annoyed or disappointed him.</li>
+<li>No affiliate links, no discount codes, and no advertising from a supplier in an issue reviewing that supplier.</li>
+<li>Every sample ever accepted is listed publicly, including the ones never written about.</li>
+<li>Where hardware was supplied free, that is printed at the top of the piece, not in a footer.</li>
+<li>It is a use report from one operator with one unit. It is never this publication&rsquo;s verdict on a supplier.</li>
+</ol></div>
+</div></div><div class="wrap" style="padding-top:56px"><div class="desig"><span class="tick"></span>04 / Subscribe</div><h2 class="sec">Once a month, first Tuesday</h2><div class="rule"></div><div class="measure"><p style="color:var(--ink-soft);margin:0 0 22px">Free. One email a month, plus a rare short interrupt when a date actually moves. Reply to any of them and it reaches a person.</p></div>
+<div class="signup">
+<p class="lead-in">Change Notice has not sent its first issue yet. Ask to be on the list and you will get issue 01 and nothing before it.</p>
+<p><a class="cta-btn" href="mailto:hans@thedesigndelta.com?subject=Change%20Notice">Ask to be added</a></p>
+<p class="consent">This opens an email to Hans. Until the newsletter moves to a mailing-list provider, the list is a plain address book and your address is stored nowhere else and used for nothing but Change Notice. Reply to any issue to come off it, no reason asked.</p>
+<!-- SETUP: when a provider is chosen, replace everything above inside .signup with the form below,
+     substituting the real username, and rewrite .consent to name the provider, the country it
+     stores in, the withdrawal right, and a link to datenschutz.html. Do not ship the form until
+     impressum.html and datenschutz.html exist. See "Change Notice — setup.md".
+<form action="https://buttondown.email/api/emails/embed-subscribe/USERNAME" method="post">
+<label class="hp" for="hp-website">Leave this field empty</label>
+<input class="hp" type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off">
+<input type="email" name="email" id="nl-email" placeholder="you@company.com" aria-label="Email address" required>
+<button type="submit">Subscribe</button>
+</form>
+-->
+</div></div><div class="wrap" style="padding-top:56px"><div class="desig"><span class="tick"></span>05 / Back issues</div><h2 class="sec">The archive</h2><div class="rule"></div>
+<div class="archive">Issue 01 has not been sent yet. Every issue will be listed here by number, date and headline, and will stay readable without subscribing.</div>
+<div style="height:46px"></div><div class="desig"><span class="tick"></span>Work with me</div><h2 class="sec">Need help choosing the right factory?</h2><div class="rule"></div><div class="cta-block"><p>I&rsquo;ve spent 18 years helping European startups manufacture in China. If you&rsquo;re building a hardware product and need someone who knows the process, book a free intro call.</p><div class="cta-actions"><a class="cta-btn" href="https://calendar.app.google/c4541LDyoKZ9HrdT9" target="_blank" rel="noopener">Book a call</a><a class="lnk mail" href="mailto:hans@thedesigndelta.com">hans@thedesigndelta.com</a></div><div class="cta-book"><p>Want the full playbook? <a href="https://thehardesthardwarelessons.com" target="_blank" rel="noopener"><strong>The Hardest Hardware Lessons</strong></a> covers every phase from first prototype to mass production, with the specific mistakes named and costs quantified.</p><div class="cta-book-links"><a class="lnk" href="https://hansolo42.gumroad.com/l/thehardesthardwarelessons" target="_blank" rel="noopener">Get digital edition</a><a class="lnk" href="https://thehardesthardwarelessons.com" target="_blank" rel="noopener">About the book</a></div></div></div>
+<a class="backlink" href="index.html">all products</a></div></main><footer><div class="wrap foot-inner"><span class="title">The Design Delta</span> &middot; <a href="https://thedesigndelta.com">thedesigndelta.com</a> &middot; 2026 &middot; a practical field guide for building in the Pearl River Delta.<br>A working reference, not a directory. Figures are approximate; verify each supplier, capability and compliance specific independently before committing.</div></footer><script>(function(){if(!document.documentElement.classList.contains("js")||!("IntersectionObserver"in window))return;var els=document.querySelectorAll("main .desig, main h2.sec, main .rule, main .prose>p, main .measure, main .issue-map li, main .signup, main .archive, main .cta-block");["main .issue-map li"].forEach(function(s){document.querySelectorAll(s).forEach(function(el,i){el.style.transitionDelay=Math.min(i*70,350)+"ms";});});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target);}});},{threshold:0.1,rootMargin:"0px 0px -50px 0px"});els.forEach(function(el){io.observe(el);});})();</script></body></html>
